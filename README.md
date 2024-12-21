@@ -67,13 +67,13 @@ The project was built according to the following requirements:
 ## **How to Run the Project**
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
+   git clone https://<access-token>@github.com/dav55566666/oxalis-games-challenge.git
    ```
 2. Navigate to the project directory:
    ```bash
-   cd project
+   cd oxalis-games-challenge
    ```
-3. Open the `index.html` file in a web browser.
+3. Open the project in live server.
 
 ---
 
