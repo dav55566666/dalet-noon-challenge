@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@blaze/css@x.x.x/dist/blaze/blaze.css"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/@blaze/atoms@x.x.x/dist/blaze-atoms/blaze-atoms.esm.js"
+    ></script>
+    <script
+      nomodule=""
+      src="https://unpkg.com/@blaze/atoms@x.x.x/dist/blaze-atoms/blaze-atoms.js"
+    ></script>
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>JS Front-End task</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div
+          class="header__container container o-container--large u-display-flex"
+        >
+          <div class="header__left">
+            <a href="/" class="logo">LOGO</a>
+          </div>
+          <div class="header__right">
+            <div class="header__search">
+              <label for="" class="input-text">
+                <input
+                  type="text"
+                  class="c-field"
+                  placeholder="Search ..."
+                  id="search-input"
+                />
+              </label>
+            </div>
+            <button class="burger-btn" id="burger-btn">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+          <aside
+            id="sidebar"
+            class="header__menu c-menu c-menu--block o-grid__cell o-grid__cell--width-20"
+          >
+            <p>Menu</p>
+            <ul>
+              <li class="c-menu__item"><a href="/">Dashboard</a></li>
+              <li class="c-menu__item"><a href="/">Reports</a></li>
+              <li class="c-menu__item"><a href="/">Settings</a></li>
+            </ul>
+          </aside>
+        </div>
+      </header>
+      <main class="page">
+        <section class="users">
+          <div class="users__container container o-container--large">
+            <div class="users__title o-media">
+              <h1 class="c-heading u-super">
+                Dynamic Admin Panel for User Management
+              </h1>
+            </div>
+            <div class="users__sorting">
+              <button
+                type="button"
+                value="addEditModal"
+                class="c-button toggle-btn"
+              >
+                Add User
+              </button>
+              <div class="sort-role">
+                <label for="sort-role" class="input-text">
+                  <span>Role</span>
+                  <select class="c-field" id="sort-role" name="role">
+                    <option value=""></option>
+                    <option value="admin">Admin</option>
+                    <option value="editor">Editor</option>
+                    <option value="viewer">Viewer</option>
+                  </select>
+                </label>
+              </div>
+            </div>
+            <div class="users__table" id="users-table">
+              <table class="c-table">
+                <thead class="c-table__head">
+                  <tr class="c-table__row c-table__row--heading">
+                    <th class="c-table__cell o-grid__cell--width-20">Name</th>
+                    <th class="c-table__cell o-grid__cell--width-35">Email</th>
+                    <th class="c-table__cell o-grid__cell--width-15">Role</th>
+                    <th class="c-table__cell o-grid__cell--width-15">Edit</th>
+                    <th class="c-table__cell o-grid__cell--width-15">Delete</th>
+                  </tr>
+                </thead>
+                <tbody class="c-table__body"> </tbody>
+              </table>
+              <div class="users__table-pagination">
+                <nav class="c-pagination">
+                  <button class="c-pagination__control">‹</button>
+                  <div class="c-pagination__pages"> </div>
+                  <button class="c-pagination__control">›</button>
+                </nav>
+                <div class="pagination-info">
+                  <span>Page: 1/10</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <div class="footer__container container o-container--large"></div>
+      </footer>
+      <div aria-hidden class="c-overlay" id="modal-bg"></div>
+      <div role="dialog" class="o-modal" id="add-edit-modal">
+        <div class="c-card">
+          <header class="c-card__header">
+            <button
+              type="button"
+              value="addEditModal"
+              class="c-button c-button--close toggle-btn"
+            >
+              &times;
+            </button>
+            <h2 class="c-heading">Add User</h2>
+          </header>
+          <div class="c-card__body">
+            <form id="add-edit-form">
+              <label for="name" class="input-text">
+                <span>Name <span>*</span></span>
+                <input class="c-field" type="text" id="name" name="name" />
+              </label>
+              <label for="email" class="input-text">
+                <span>Email <span>*</span></span>
+                <input class="c-field" type="email" id="email" name="email" />
+              </label>
+              <label for="role" class="input-text">
+                <span>Role <span>*</span></span>
+                <select class="c-field" id="role" name="role">
+                  <option value=""></option>
+                  <option value="admin">Admin</option>
+                  <option value="editor">Editor</option>
+                  <option value="viewer">Viewer</option>
+                </select>
+              </label>
+              <label for="" class="input-btn">
+                <input
+                  type="submit"
+                  class="c-button c-button--brand"
+                  value="Create User"
+                />
+              </label>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div role="dialog" class="o-modal" id="delete-modal">
+        <div class="c-card">
+          <header class="c-card__header">
+            <button
+              type="button"
+              value="deleteModal"
+              class="c-button c-button--close toggle-btn"
+            >
+              &times;
+            </button>
+            <h3 class="c-heading">
+              Are you sure you want to delete the user ?
+            </h3>
+          </header>
+          <div class="c-card__body">
+            <button
+              class="c-button c-button--info c-button c-button--error"
+              value="deleteModal"
+              id="confirm-delete"
+              type="button"
+            >
+              Delete
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="./scripts/index.js"></script>
+  </body>
+</html>
