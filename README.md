@@ -67,11 +67,11 @@ The project was built according to the following requirements:
 ## **How to Run the Project**
 1. Clone the repository:
    ```bash
-   git clone https://<access-token>@github.com/dav55566666/oxalis-games-challenge.git
+   git clone https://<access-token>@github.com/dav55566666/dalet-noon-challenge.git
    ```
 2. Navigate to the project directory:
    ```bash
-   cd oxalis-games-challenge
+   cd dalet-noon-challenge
    ```
 3. Open the project in live server.
 
